@@ -56,6 +56,7 @@ GEM
     net-ldap (0.2.2)
     net-ping (1.5.2)
       net-ldap (~> 0.2.2)
+    pg (0.12.2)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.1)
@@ -109,6 +110,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   net-ping
+  pg
   rails (= 3.2.1)
   sass-rails (~> 3.2.3)
   sqlite3
