@@ -1,27 +1,13 @@
-<h1>Listing servers</h1>
+<h1>
+  Servidores
+</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Address</th>
-    <th>Description</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to 'Agregar Servidor', new_server_path %>
 
-<% @servers.each do |server| %>
-  <tr>
-    <td><%= server.name %></td>
-    <td><%= server.address %></td>
-    <td><%= server.description %></td>
-    <td><%= link_to 'Show', server %></td>
-    <td><%= link_to 'Edit', edit_server_path(server) %></td>
-    <td><%= link_to 'Destroy', server, confirm: 'Are you sure?', method: :delete %></td>
-  </tr>
-<% end %>
-</table>
-
-<br />
-
-<%= link_to 'New Server', new_server_path %>
+<ul>
+  <% @servers.each do |server| %>
+  <li>
+    <%= link_to server.name, server %>
+  </li>
+  <% end %>
+</ul>

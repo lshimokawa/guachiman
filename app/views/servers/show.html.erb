@@ -1,20 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <b>Name:</b>
+<h1>
   <%= @server.name %>
-</p>
-
+  <span>
+    <%= @server.server_and_port %>
+  </span>
+</h1>
 <p>
-  <b>Address:</b>
-  <%= @server.address %>
-</p>
-
-<p>
-  <b>Description:</b>
   <%= @server.description %>
 </p>
+<p class="actions">
+  <%= link_to 'Volver al Listado de Servidores', servers_path %> |
+  <%= link_to 'Editar Servidor', edit_server_path(@server) %>
+</p>
 
-
-<%= link_to 'Edit', edit_server_path(@server) %> |
-<%= link_to 'Back', servers_path %>
+<% unless @server.checks.empty? %>
+<table>
+  <thead>
+    <tr>
+      <th>Fecha</th>
+      <th>Resultado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @server.checks.each do |check| %>
+    <tr>
+      <td><%= check.created_at %></td>
+      <td><%= check.result %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
+<% end %>

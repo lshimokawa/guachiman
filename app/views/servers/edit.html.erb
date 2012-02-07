@@ -1,6 +1,11 @@
-<h1>Editing server</h1>
+<h1>
+  Editando Servidor
+  <span>
+    <%= @server.server_and_port %>
+  </span>
+</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @server %> |
-<%= link_to 'Back', servers_path %>
+<%= link_to 'Volver al servidor', @server %> |
+<%= link_to 'Volver al listado de servidores', servers_path %>
