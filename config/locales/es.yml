@@ -1,0 +1,10 @@
+es:
+  activerecord:
+    models:
+      server: "Servidor"
+    attributes:
+      server:
+        name:         "Nombre"
+        address:      "Dirección"
+        port:         "Puerto"
+        description:  "Descripción"
